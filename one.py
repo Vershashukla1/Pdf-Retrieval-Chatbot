@@ -62,8 +62,9 @@ def main():
         st.header("Ask a Question about the Uploaded PDF")
 
         user_question = st.text_area("Ask a question:")
+        submit_button = st.button("Submit")
 
-        if user_question:
+        if submit_button and user_question:
             response = conversation(user_question)
             message = {'human': user_question, 'AI': response['response']}
             st.write("Chatbot:", response['response'])
